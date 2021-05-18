@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    'bean',
+    'macro'
+]
+
+
+
+
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+#panic = 'abort'
+

@@ -1,0 +1,21 @@
+[package]
+name = "bean-macro"
+version = "0.1.0"
+authors = ["bit-ranger <sincerebravefight@gmail.com>"]
+edition = "2018"
+
+description = "object container for rust like spring beans"
+homepage = "https://github.com/bit-ranger/bean"
+readme = "README.md"
+keywords = ["container", "spring", "beans", "ioc"]
+categories = ["ioc"]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/bit-ranger/bean"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0.9"
+syn = {version = "1.0.72", features = ["full", "extra-traits"]}
+proc-macro2 = "1.0.26"
