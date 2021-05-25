@@ -2,7 +2,7 @@ pub use std::sync::Arc;
 
 pub trait HasComponent<C> {
 
-    fn add(&mut self, name: &str, component: Arc<C>);
+    fn put(&mut self, name: &str, component: Arc<C>) -> &mut Self;
 
     fn get(&self, name: &str) -> Option<Arc<C>>;
 

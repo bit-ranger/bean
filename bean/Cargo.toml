@@ -13,4 +13,4 @@ license = "MIT/Apache-2.0"
 repository = "https://github.com/bit-ranger/bean"
 
 [dependencies]
-bean-macro = "0.1.2"
+bean-macro = {path = "../macro"}

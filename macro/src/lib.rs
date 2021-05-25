@@ -73,15 +73,16 @@ pub fn container(input: TokenStream) -> TokenStream {
     let struct_def = quote!{
         #[derive(Default)]
         pub struct #container_name {
-            #(#field_names: std::collections::HashMap<String, async_std::sync::Arc<#field_types>>),*
+            #(#field_names: std::collections::HashMap<String, bean::component::Arc<#field_types>>),*
         }
     };
 
     let comp_trait_impl = quote!{
         #(
             impl bean::component::HasComponent<#field_types> for #container_name {
-                fn add(&mut self, name: &str, component: bean::component::Arc<#field_types>) {
+                fn put(&mut self, name: &str, component: bean::component::Arc<#field_types>) -> &mut Self{
                     self.#field_names.insert(name.to_owned(), component);
+                    self
                 }
 
                 fn get(&self, name: &str) -> Option<bean::component::Arc<#field_types>> {

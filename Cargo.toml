@@ -1,7 +1,8 @@
 [workspace]
 members = [
     'bean',
-    'macro'
+    'macro',
+    'check'
 ]
 
 
